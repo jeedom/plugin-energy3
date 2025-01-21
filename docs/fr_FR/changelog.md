@@ -1,4 +1,4 @@
-# Changelog plugin template
+# Changelog plugin Energie dashboard
 
 >**IMPORTANT**
 >
