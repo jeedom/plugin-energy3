@@ -147,8 +147,8 @@ class energy3 extends eqLogic {
 
 
   public function calculImportExport() {
-    $net_power = jeedom::evaluateExpression($this->getConfiguration('elec::net::power'));
-    $elec_production = jeedom::evaluateExpression($this->getConfiguration('elec::production::instant'));
+    $net_power = (float) jeedom::evaluateExpression($this->getConfiguration('elec::net::power'));
+    $elec_production = (float) jeedom::evaluateExpression($this->getConfiguration('elec::production::instant'));
     if ($net_power > 0) {
       $this->checkAndUpdateCmd('elec::import::instant', $net_power);
       $this->checkAndUpdateCmd('elec::export::instant', 0);
@@ -165,14 +165,24 @@ class energy3 extends eqLogic {
     } else {
       $this->checkAndUpdateCmd('elec::production::consumption::instant', 0);
     }
+    if (!is_numeric($net_power)) {
+        $net_power = 0;
+    }
+    if (!is_numeric($elec_production)) {
+        $elec_production = 0;
+    }
     $this->checkAndUpdateCmd('elec::consumption::instant', $elec_production + $net_power);
   }
 
   public function calculPerformance() {
-    $production = $this->getCmd('info', 'elec::production')->execCmd();
-    $export = $this->getCmd('info', 'elec::export')->execCmd();
-    $consumption = $this->getCmd('info', 'elec::consumption')->execCmd();
-    $autoconsumption = round((($production - $export) / $production) * 100, 1);
+    $production = (float) $this->getCmd('info', 'elec::production')->execCmd();
+    $export = (float) $this->getCmd('info', 'elec::export')->execCmd();
+    $consumption = (float) $this->getCmd('info', 'elec::consumption')->execCmd();
+    if ($production > 0) {
+      $autoconsumption = round((($production - $export) / $production) * 100, 1);
+    }else {
+      $autoconsumption = 0;
+    }
     if ($autoconsumption < 0) {
       $autoconsumption = 0;
     } elseif ($autoconsumption > 100) {
