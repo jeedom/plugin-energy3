@@ -1,0 +1,83 @@
+{
+    "plugins\/energy3\/desktop\/php\/panel.php": {
+        "401 - Accès non autorisé": "401 – Unbefugter Zugriff",
+        "Liste des équipements": "Liste der Ausrüstung",
+        "Rechercher": "Forschen"
+    },
+    "plugins\/energy3\/desktop\/php\/energy3.php": {
+        "401 - Accès non autorisé": "401 – Unbefugter Zugriff",
+        "Gestion": "Management",
+        "Ajouter": "Hinzufügen",
+        "Configuration": "Aufbau",
+        "Mes templates": "Meine Vorlagen",
+        "Aucun équipement trouvé, cliquer sur \"Ajouter\" pour commencer": "Keine Ausrüstung gefunden, klicken Sie zum Starten auf \"Hinzufügen\"",
+        "Rechercher": "Forschen",
+        "Equipement visible": "Sichtbare Ausrüstung",
+        "Equipement non visible": "Ausrüstung nicht sichtbar",
+        "Configuration avancée": "Erweiterte Einrichtung",
+        "Dupliquer": "Duplikat",
+        "Sauvegarder": "Zu schützen",
+        "Supprimer": "LÖSCHEN",
+        "Equipement": "Ausrüstung",
+        "Détails": "Einzelheiten",
+        "Commandes": "Aufträge",
+        "Paramètres généraux": "Allgemeine Einstellungen",
+        "Nom de l'équipement": "Ausrüstungsname",
+        "Objet parent": "übergeordnetes Objekt",
+        "Aucun": "Keiner",
+        "Catégorie": "Kategorie",
+        "Options": "Optionen",
+        "Activer": "Ermöglichen",
+        "Visible": "Sichtbar",
+        "Electricité": "Elektrizität",
+        "Importé du réseau par jour": "Täglich aus dem Netzwerk importiert",
+        "Consommation par jour": "Verbrauch pro Tag",
+        "Production instantanée": "Sofortige Produktion",
+        "Production par jour": "Produktion pro Tag",
+        "Renvoyé au réseaux par jour": "Täglich zu Netzwerken zurückgekehrt",
+        "Puissance nette instantanée": "Sofortige Netzleistung",
+        "Gaz": "Gas",
+        "Consommation instantanée": "Sofortiger Verbrauch",
+        "Eau": "Wasser",
+        "Informations": "Information",
+        "Description": "Beschreibung",
+        "Commande de mise à jour des informations": "Befehl zum Aktualisieren von Informationen",
+        "Estimation production solaire": "Schätzung der Solarproduktion",
+        "Localisation": "Standort",
+        "Orientation (-90=est, 0=sud, 90=ouest, 180=nord)": "Ausrichtung (-90=Osten, 0=Süden, 90=Westen, 180=Norden)",
+        "Inclinaison": "Neigung",
+        "Puissance en KWc": "Leistung in kWp",
+        "Divers": "Verschieden",
+        "Température extérieure": "Außentemperatur",
+        "Consommateur électricité": "Stromverbraucher",
+        "Ajouter une commande": "Bestellung hinzufügen",
+        "Nom": "Name",
+        "Type": "Art",
+        "Etat": "Zustand",
+        "Actions": "Anteile"
+    },
+    "plugins\/energy3\/desktop\/js\/energy3.js": {
+        "Nom de la commande": "Befehlsname",
+        "Choisir une icône": "Wählen Sie ein Symbol",
+        "Afficher": "Anzeige",
+        "Historiser": "Historisiere",
+        "Inverser": "Umkehren",
+        "Min": "Minimum",
+        "Max": "Max",
+        "Unité": "Einheit",
+        "Supprimer la commande": "Auftrag löschen",
+        "Commande": "Befehl",
+        "Nom": "Name",
+        "Consommation par jour (si Wh ou kWh)": "Verbrauch pro Tag (wenn Wh oder kWh)"
+    },
+    "plugins\/energy3\/core\/ajax\/energy3.ajax.php": {
+        "401 - Accès non autorisé": "401 – Unbefugter Zugriff",
+        "Aucune méthode correspondante à": "Keine Matching-Methode"
+    },
+    "plugins\/energy3\/core\/class\/energy3.class.php": {
+        "Erreur lors de la récuperation des prévision solaire : ": "Fehler beim Abrufen der Sonnenprognose:"
+    },
+    "info.json": {
+        "Plugin servant à afficher un dashboard énergétique de la maison (eau, gaz, électricité et production solaire). Attention ce plugin ne prend pas en charge les batteries": "Plugin zur Anzeige eines Energie-Dashboards des Hauses (Wasser-, Gas-, Strom- und Solarproduktion). Bitte beachten Sie, dass dieses Plugin keine Batterien unterstützt"
+    }
+}

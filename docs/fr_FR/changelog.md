@@ -1,3 +1,5 @@
+# Changelog Energie dashboard
+
 # Changelog plugin Energie dashboard
 
 >**IMPORTANT**

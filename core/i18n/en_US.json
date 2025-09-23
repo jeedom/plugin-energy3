@@ -1,0 +1,83 @@
+{
+    "plugins\/energy3\/desktop\/php\/panel.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized Access",
+        "Liste des équipements": "List of equipment",
+        "Rechercher": "To research"
+    },
+    "plugins\/energy3\/desktop\/php\/energy3.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized Access",
+        "Gestion": "Management",
+        "Ajouter": "Add",
+        "Configuration": "Configuration",
+        "Mes templates": "My templates",
+        "Aucun équipement trouvé, cliquer sur \"Ajouter\" pour commencer": "No equipment found, click \"Add\" to start",
+        "Rechercher": "To research",
+        "Equipement visible": "Visible equipment",
+        "Equipement non visible": "Equipment not visible",
+        "Configuration avancée": "Advanced setup",
+        "Dupliquer": "Duplicate",
+        "Sauvegarder": "To safeguard",
+        "Supprimer": "DELETE",
+        "Equipement": "Equipment",
+        "Détails": "Details",
+        "Commandes": "Orders",
+        "Paramètres généraux": "General settings",
+        "Nom de l'équipement": "Equipment name",
+        "Objet parent": "Parent object",
+        "Aucun": "None",
+        "Catégorie": "Category",
+        "Options": "Options",
+        "Activer": "Enable",
+        "Visible": "Visible",
+        "Electricité": "Electricity",
+        "Importé du réseau par jour": "Imported from the network daily",
+        "Consommation par jour": "Consumption per day",
+        "Production instantanée": "Instant output",
+        "Production par jour": "Production per day",
+        "Renvoyé au réseaux par jour": "Returned to networks daily",
+        "Puissance nette instantanée": "Instant net power",
+        "Gaz": "Gas",
+        "Consommation instantanée": "Instant consumption",
+        "Eau": "Water",
+        "Informations": "Information",
+        "Description": "Description",
+        "Commande de mise à jour des informations": "Information update command",
+        "Estimation production solaire": "Solar production estimate",
+        "Localisation": "Location",
+        "Orientation (-90=est, 0=sud, 90=ouest, 180=nord)": "Orientation (-90=east, 0=south, 90=west, 180=north)",
+        "Inclinaison": "Tilt",
+        "Puissance en KWc": "Power in KWp",
+        "Divers": "Various",
+        "Température extérieure": "Outside temperature",
+        "Consommateur électricité": "Electricity consumer",
+        "Ajouter une commande": "Add an order",
+        "Nom": "Name",
+        "Type": "Kind",
+        "Etat": "State",
+        "Actions": "Shares"
+    },
+    "plugins\/energy3\/desktop\/js\/energy3.js": {
+        "Nom de la commande": "Command name",
+        "Choisir une icône": "Choose an icon",
+        "Afficher": "Display",
+        "Historiser": "Historize",
+        "Inverser": "Reverse",
+        "Min": "Minimum",
+        "Max": "Maximum",
+        "Unité": "Unit",
+        "Supprimer la commande": "Delete order",
+        "Commande": "Order",
+        "Nom": "Name",
+        "Consommation par jour (si Wh ou kWh)": "Consumption per day (if Wh or kWh)"
+    },
+    "plugins\/energy3\/core\/ajax\/energy3.ajax.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized Access",
+        "Aucune méthode correspondante à": "No matching method"
+    },
+    "plugins\/energy3\/core\/class\/energy3.class.php": {
+        "Erreur lors de la récuperation des prévision solaire : ": "Error while retrieving solar forecast:"
+    },
+    "info.json": {
+        "Plugin servant à afficher un dashboard énergétique de la maison (eau, gaz, électricité et production solaire). Attention ce plugin ne prend pas en charge les batteries": "Plugin used to display an energy dashboard of the house (water, gas, electricity and solar production). Please note this plugin does not support batteries"
+    }
+}

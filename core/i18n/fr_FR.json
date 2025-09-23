@@ -1,0 +1,83 @@
+{
+    "plugins\/energy3\/desktop\/php\/panel.php": {
+        "401 - Accès non autorisé": "401 - Accès non autorisé",
+        "Liste des équipements": "Liste des équipements",
+        "Rechercher": "Rechercher"
+    },
+    "plugins\/energy3\/desktop\/php\/energy3.php": {
+        "401 - Accès non autorisé": "401 - Accès non autorisé",
+        "Gestion": "Gestion",
+        "Ajouter": "Ajouter",
+        "Configuration": "Configuration",
+        "Mes templates": "Mes templates",
+        "Aucun équipement trouvé, cliquer sur \"Ajouter\" pour commencer": "Aucun équipement trouvé, cliquer sur \"Ajouter\" pour commencer",
+        "Rechercher": "Rechercher",
+        "Equipement visible": "Equipement visible",
+        "Equipement non visible": "Equipement non visible",
+        "Configuration avancée": "Configuration avancée",
+        "Dupliquer": "Dupliquer",
+        "Sauvegarder": "Sauvegarder",
+        "Supprimer": "Supprimer",
+        "Equipement": "Equipement",
+        "Détails": "Détails",
+        "Commandes": "Commandes",
+        "Paramètres généraux": "Paramètres généraux",
+        "Nom de l'équipement": "Nom de l'équipement",
+        "Objet parent": "Objet parent",
+        "Aucun": "Aucun",
+        "Catégorie": "Catégorie",
+        "Options": "Options",
+        "Activer": "Activer",
+        "Visible": "Visible",
+        "Electricité": "Electricité",
+        "Importé du réseau par jour": "Importé du réseau par jour",
+        "Consommation par jour": "Consommation par jour",
+        "Production instantanée": "Production instantanée",
+        "Production par jour": "Production par jour",
+        "Renvoyé au réseaux par jour": "Renvoyé au réseaux par jour",
+        "Puissance nette instantanée": "Puissance nette instantanée",
+        "Gaz": "Gaz",
+        "Consommation instantanée": "Consommation instantanée",
+        "Eau": "Eau",
+        "Informations": "Informations",
+        "Description": "Description",
+        "Commande de mise à jour des informations": "Commande de mise à jour des informations",
+        "Estimation production solaire": "Estimation production solaire",
+        "Localisation": "Localisation",
+        "Orientation (-90=est, 0=sud, 90=ouest, 180=nord)": "Orientation (-90=est, 0=sud, 90=ouest, 180=nord)",
+        "Inclinaison": "Inclinaison",
+        "Puissance en KWc": "Puissance en KWc",
+        "Divers": "Divers",
+        "Température extérieure": "Température extérieure",
+        "Consommateur électricité": "Consommateur électricité",
+        "Ajouter une commande": "Ajouter une commande",
+        "Nom": "Nom",
+        "Type": "Type",
+        "Etat": "Etat",
+        "Actions": "Actions"
+    },
+    "plugins\/energy3\/desktop\/js\/energy3.js": {
+        "Nom de la commande": "Nom de la commande",
+        "Choisir une icône": "Choisir une icône",
+        "Afficher": "Afficher",
+        "Historiser": "Historiser",
+        "Inverser": "Inverser",
+        "Min": "Min",
+        "Max": "Max",
+        "Unité": "Unité",
+        "Supprimer la commande": "Supprimer la commande",
+        "Commande": "Commande",
+        "Nom": "Nom",
+        "Consommation par jour (si Wh ou kWh)": "Consommation par jour (si Wh ou kWh)"
+    },
+    "plugins\/energy3\/core\/ajax\/energy3.ajax.php": {
+        "401 - Accès non autorisé": "401 - Accès non autorisé",
+        "Aucune méthode correspondante à": "Aucune méthode correspondante à"
+    },
+    "plugins\/energy3\/core\/class\/energy3.class.php": {
+        "Erreur lors de la récuperation des prévision solaire : ": "Erreur lors de la récuperation des prévision solaire : "
+    },
+    "info.json": {
+        "Plugin servant à afficher un dashboard énergétique de la maison (eau, gaz, électricité et production solaire). Attention ce plugin ne prend pas en charge les batteries": "Plugin servant à afficher un dashboard énergétique de la maison (eau, gaz, électricité et production solaire). Attention ce plugin ne prend pas en charge les batteries"
+    }
+}
