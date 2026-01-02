@@ -189,13 +189,15 @@ class energy3 extends eqLogic {
       $autoconsumption = 100;
     }
     $this->checkAndUpdateCmd('elec::autoconsumption', $autoconsumption);
-    $selfsufficiency = round((($production - $export) / $consumption) * 100, 1);
-    if ($selfsufficiency < 0) {
-      $selfsufficiency = 0;
-    } elseif ($selfsufficiency > 100) {
-      $selfsufficiency = 100;
+    if($consumption > 0){
+      $selfsufficiency = round((($production - $export) / $consumption) * 100, 1);
+      if ($selfsufficiency < 0) {
+        $selfsufficiency = 0;
+      } elseif ($selfsufficiency > 100) {
+        $selfsufficiency = 100;
+      }
+      $this->checkAndUpdateCmd('elec::selfsufficiency', $selfsufficiency);
     }
-    $this->checkAndUpdateCmd('elec::selfsufficiency', $selfsufficiency);
   }
 
 
