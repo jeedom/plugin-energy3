@@ -327,8 +327,10 @@ class energy3 extends eqLogic {
     $listener->setFunction('listenner');
     $listener->setOption(array('energy3_id' => intval($this->getId())));
     $listener->emptyEvent();
-    foreach ($events as $cmd_id) {
-      $listener->addEvent($cmd_id);
+    if(is_array($events) && count($events) > 0){
+      foreach ($events as $cmd_id) {
+        $listener->addEvent($cmd_id);
+      }
     }
     $listener->save();
 
@@ -443,6 +445,8 @@ class energy3 extends eqLogic {
         }
         if ($cmd->getLogicalId() == 'elec::consumption') {
           $elec_consumption = $replace['#elec-consumption-state#'];
+        }else{
+          $elec_consumption = 0;
         }
         if ($replace['#' . str_replace('::', '-', $cmd->getLogicalId()) . '-state#'] == '') {
           $replace['#' . str_replace('::', '-', $cmd->getLogicalId()) . '-state#'] = 0;
@@ -533,7 +537,7 @@ class energy3 extends eqLogic {
       );
 
       $info['name'] = (!isset($elecConsumer['name']) || $elecConsumer['name'] == '') ? $consumer->getEqLogic()->getName() : $elecConsumer['name'];
-      if ($consumption == 0) {
+      if ($consumption == 0 || $elec_consumption == 0) {
         $info['pourcent'] = 0;
       } else {
         $info['pourcent'] = round(($consumption / $elec_consumption) * 100);
