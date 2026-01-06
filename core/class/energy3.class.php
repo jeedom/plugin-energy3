@@ -342,22 +342,25 @@ class energy3 extends eqLogic {
     }
 
     $nbConsummer = count($this->getConfiguration('elecConsumers'));
-    foreach ($this->getCmd('info') as $cmd) {
-      if (strpos($cmd->getLogicalId(), 'elec-consummer-') !== 0) {
-        continue;
-      }
-      $cmd->remove();
-    }
-
-    foreach ($this->getConfiguration('elecConsumers') as $elecConsumer) {
-      $consumer = cmd::byId(str_replace('#', '', $elecConsumer['cmd']));
-      if (is_object($consumer) && $consumer->getIsHistorized() != 1) {
-        $consumer->setIsHistorized(1);
-        $consumer->save();
-      }
-    }
+	if(is_array($this->getCmd('info')) && count($this->getCmd('info')) > 0){
+	    foreach ($this->getCmd('info') as $cmd) {
+	      if (strpos($cmd->getLogicalId(), 'elec-consummer-') !== 0) {
+	        continue;
+	      }
+	      $cmd->remove();
+	    }
+	}
+    if(is_array($this->getConfiguration('elecConsumers')) && count($this->getConfiguration('elecConsumers')) > 0){
+	    foreach ($this->getConfiguration('elecConsumers') as $elecConsumer) {
+	      $consumer = cmd::byId(str_replace('#', '', $elecConsumer['cmd']));
+	      if (is_object($consumer) && $consumer->getIsHistorized() != 1) {
+	        $consumer->setIsHistorized(1);
+	        $consumer->save();
+	      }
+	    }
+	  }
   }
-
+	  
   public function generatePanel($_version = 'dashboard', $_period = 'D') {
     $starttime = date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['start']));
     $endtime = date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['end']));
