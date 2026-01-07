@@ -415,7 +415,7 @@ class energy3 extends eqLogic {
     }
     if ($_period == 'D') {
       $return['html'] .= $this->toHtml($_version);
-      $elec_consumption = $this->getCmd('info', 'elec::consumption')->execCmd();
+      $elec_consumption = (float) $this->getCmd('info', 'elec::consumption')->execCmd();
     } else {
       $replace = $this->preToHtml($_version);
       $version = jeedom::versionAlias($_version);
