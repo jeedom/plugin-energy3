@@ -189,13 +189,15 @@ class energy3 extends eqLogic {
       $autoconsumption = 100;
     }
     $this->checkAndUpdateCmd('elec::autoconsumption', $autoconsumption);
-    $selfsufficiency = round((($production - $export) / $consumption) * 100, 1);
-    if ($selfsufficiency < 0) {
-      $selfsufficiency = 0;
-    } elseif ($selfsufficiency > 100) {
-      $selfsufficiency = 100;
+    if($consumption > 0){
+      $selfsufficiency = round((($production - $export) / $consumption) * 100, 1);
+      if ($selfsufficiency < 0) {
+        $selfsufficiency = 0;
+      } elseif ($selfsufficiency > 100) {
+        $selfsufficiency = 100;
+      }
+      $this->checkAndUpdateCmd('elec::selfsufficiency', $selfsufficiency);
     }
-    $this->checkAndUpdateCmd('elec::selfsufficiency', $selfsufficiency);
   }
 
 
@@ -325,8 +327,10 @@ class energy3 extends eqLogic {
     $listener->setFunction('listenner');
     $listener->setOption(array('energy3_id' => intval($this->getId())));
     $listener->emptyEvent();
-    foreach ($events as $cmd_id) {
-      $listener->addEvent($cmd_id);
+    if(is_array($events) && count($events) > 0){
+      foreach ($events as $cmd_id) {
+        $listener->addEvent($cmd_id);
+      }
     }
     $listener->save();
 
@@ -338,22 +342,25 @@ class energy3 extends eqLogic {
     }
 
     $nbConsummer = count($this->getConfiguration('elecConsumers'));
-    foreach ($this->getCmd('info') as $cmd) {
-      if (strpos($cmd->getLogicalId(), 'elec-consummer-') !== 0) {
-        continue;
-      }
-      $cmd->remove();
-    }
-
-    foreach ($this->getConfiguration('elecConsumers') as $elecConsumer) {
-      $consumer = cmd::byId(str_replace('#', '', $elecConsumer['cmd']));
-      if (is_object($consumer) && $consumer->getIsHistorized() != 1) {
-        $consumer->setIsHistorized(1);
-        $consumer->save();
-      }
-    }
+	if(is_array($this->getCmd('info')) && count($this->getCmd('info')) > 0){
+	    foreach ($this->getCmd('info') as $cmd) {
+	      if (strpos($cmd->getLogicalId(), 'elec-consummer-') !== 0) {
+	        continue;
+	      }
+	      $cmd->remove();
+	    }
+	}
+    if(is_array($this->getConfiguration('elecConsumers')) && count($this->getConfiguration('elecConsumers')) > 0){
+	    foreach ($this->getConfiguration('elecConsumers') as $elecConsumer) {
+	      $consumer = cmd::byId(str_replace('#', '', $elecConsumer['cmd']));
+	      if (is_object($consumer) && $consumer->getIsHistorized() != 1) {
+	        $consumer->setIsHistorized(1);
+	        $consumer->save();
+	      }
+	    }
+	  }
   }
-
+	  
   public function generatePanel($_version = 'dashboard', $_period = 'D') {
     $starttime = date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['start']));
     $endtime = date('Y-m-d H:i:s', strtotime(self::$_period[$_period]['end']));
@@ -408,7 +415,7 @@ class energy3 extends eqLogic {
     }
     if ($_period == 'D') {
       $return['html'] .= $this->toHtml($_version);
-      $elec_consumption = $this->getCmd('info', 'elec::consumption')->execCmd();
+      $elec_consumption = (float) $this->getCmd('info', 'elec::consumption')->execCmd();
     } else {
       $replace = $this->preToHtml($_version);
       $version = jeedom::versionAlias($_version);
@@ -441,6 +448,8 @@ class energy3 extends eqLogic {
         }
         if ($cmd->getLogicalId() == 'elec::consumption') {
           $elec_consumption = $replace['#elec-consumption-state#'];
+        }else{
+          $elec_consumption = 0;
         }
         if ($replace['#' . str_replace('::', '-', $cmd->getLogicalId()) . '-state#'] == '') {
           $replace['#' . str_replace('::', '-', $cmd->getLogicalId()) . '-state#'] = 0;
@@ -531,7 +540,7 @@ class energy3 extends eqLogic {
       );
 
       $info['name'] = (!isset($elecConsumer['name']) || $elecConsumer['name'] == '') ? $consumer->getEqLogic()->getName() : $elecConsumer['name'];
-      if ($consumption == 0) {
+      if ($consumption == 0 || $elec_consumption == 0) {
         $info['pourcent'] = 0;
       } else {
         $info['pourcent'] = round(($consumption / $elec_consumption) * 100);
